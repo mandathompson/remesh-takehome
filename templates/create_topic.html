@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+        <legend>{{ legend }}</legend>
+        <div class="form-group">
+            <p>
+                {{ form.title(class="form-control form-control-lg") }}
+            </p>
+        
+                
+        </div>
+    </fieldset>
+    <div class="form-group">
+        {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+</form>
+{% endblock content %}

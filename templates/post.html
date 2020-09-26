@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="content-section">
+      <div>
+        <h2 class="article-title">{{ post.title }}</h2>
+        <small class="text-muted">{{ post.posted.strftime('%Y-%m-%d') }}</small>      
+          <div>
+            <a href="{{ url_for('update_post', post_id=post.id) }}">Update</a>
+            <a href="{{ url_for('delete_post', post_id=post.id) }}">Delete</a>
+          </div>
+          <a href="{{ url_for('new_message', post_id=post.id) }}">Post a Message</a>     
+      </div>
+    </div>
+  </article>
+
+
+
+  <div>
+    <h2>Message</h2>
+    {% if post.messages %}
+    {% for message in post.messages %}
+      <a href="{{ url_for('message', message_id=message.id) }}">
+        <p>
+          <h3>{{ message.content}}</h3>
+          <small class="text-muted">{{ message.posted.strftime('%Y-%m-%d') }}</small>  
+        </p>
+      </a>
+    {% endfor %}
+    {% endif %}
+   
+  </div>
+{% endblock content %}

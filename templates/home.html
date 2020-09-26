@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block content %}
+
+<p class='text-muted'>Search for a topic you'd like to discuss:
+</p>
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class="flashes">
+    {% for message in messages %}
+      <li>{{ message }}</li>
+    {% endfor %}
+    </ul>
+  {% endif %}
+{% endwith %}
+{% from "_formhelpers.html" import render_field %}
+<form method="post">
+  <dl>
+    <p>
+    {{ render_field(form.search) }}
+  </p></dl>
+  <p><input type="submit" value="Search">
+</p></form>
+
+<a class="btn btn-primary mb-2" href="{{ url_for('new_post') }}">Start a Conversation</a>
+
+{% for post in posts %}
+        <article class="content-section">
+          <div>
+            <h2><a href="{{ url_for('post', post_id=post.id) }}">{{ post.title }}</a></h2>
+              <small class="text-muted">{{ post.posted.strftime('%Y-%m-%d') }}</small>
+          </div>
+        </article>
+    {% endfor %}
+
+{% endblock content %}
