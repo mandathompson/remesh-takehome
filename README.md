@@ -3,7 +3,7 @@
 Junior Dev take home assignment completed by Amanda Thompson
 
 ## Installation
-Assuming you have [python](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/) locally installed (you may need to use pip3 instead of pip):
+Assuming you have [python](https://www.python.org/) and [pip](https://pip.pypa.io/en/stable/) locally installed (you may need to use pip3 instead of pip), perform the following in order:
 
 - fork and clone the repository
 - in terminal, cd into the directory
