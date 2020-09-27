@@ -18,7 +18,7 @@ app.config['SECRET_KEY'] = '5791628bb0b13ce0c676dfde280ba245'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 db = SQLAlchemy(app)
 
-
+### Models for Database ###
 
 
 class Post(db.Model):
@@ -53,7 +53,7 @@ class Thought(db.Model):
     posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     message_id = db.Column(db.Integer, db.ForeignKey('message.id'))
 
-
+### Routes ###
 
 
 @app.route('/', methods=['GET', 'POST'])
